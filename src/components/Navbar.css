@@ -1,10 +1,163 @@
-/* Navbar.css */
-
+/* Navbar styles */
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: #dea806;
+  color: #eee7e7;
+}
+
+.navbar img {
+  width: 100px;
+  height: auto;
+}
+
+/* Menu styles */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.navbar-menu li {
+  margin: 0 15px;
+  cursor: pointer;
+  text-transform: capitalize; /* Capitalizes first letter */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-menu li:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Search container styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #888;
+}
+
+.search-input {
+  padding: 8px 10px 8px 30px; /* Adjust padding for icon */
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 150px;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-input:focus {
+  width: 200px; /* Expands on focus */
+}
+
+/* Cart container styles */
+.cart-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.cart-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.cart-icon:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+/* Dot styles for cart count */
+.dot {
+  position: absolute;
+  top: -10px; /* Position the dot above the icon */
+  right: -10px; /* Position the dot to the right of the icon */
+  background-color: #ff6347;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 8px; /* Adjust padding for better circle shape */
+  font-size: 0.75em;
+  min-width: 20px; /* Minimum width to maintain circle */
+  height: 20px; /* Fixed height to maintain circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+  z-index: 10; /* Ensure the dot is on top */
+}
+.dot {
+  animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 768px) {
+  .navbar-menu {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .search-input {
+    width: 100px; /* Smaller search input for mobile */
+  }
+
+  .search-input:focus {
+    width: 150px; /* Expanded width on focus for mobile */
+  }
+
+  .dot {
+    top: -5px; /* Adjust position for smaller screens */
+    right: -5px; /* Adjust position for smaller screens */
+    min-width: 16px; /* Smaller dot for mobile */
+    height: 16px; /* Smaller dot for mobile */
+    font-size: 0.7em; /* Smaller text size for mobile */
+  }
+}
+
+/* Signup button styles */
+.signup-button {
+  padding: 8px 15px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #ff4500;
+}
+
+
+
+/* .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #dea806;
     color: #eee7e7;
   }
@@ -19,19 +172,20 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    font-size: 18px;
   }
   
   .navbar-menu li {
     margin: 0 15px;
     cursor: pointer;
     text-transform: capitalize; /* Capitalizes first letter */
-    font-weight: bold;
+    /* font-weight: bold;
     transition: color 0.3s;
   }
   
   .navbar-menu li:hover {
     color:  #ff6347; /* Change color on hover */
-  }
+  /* }
   
   .navbar-right {
     display: flex;
@@ -49,11 +203,11 @@
     position: absolute;
     left: 10px;
     color: #888;
-  }
+  } */
   
-  .search-input {
+  /* .search-input {
     padding: 8px 10px 8px 30px; /* Adjust padding for icon */
-    border-radius: 20px;
+    /* border-radius: 20px;
     border: none;
     outline: none;
     width: 150px;
@@ -62,7 +216,7 @@
   
   .search-input:focus {
     width: 200px; /* Expands on focus */
-  }
+  /* }
   
   .cart-container {
     position: relative;
@@ -74,23 +228,23 @@
     cursor: pointer;
     color: #fff;
     transition: color 0.3s;
-  }
+  } */
   
-  .cart-icon:hover {
+  /* .cart-icon:hover {
     color: #ff6347; /* Change color on hover */
-  }
-  
-  .cart-count {
-    position: absolute;
-    top: -5px;
+  /* } */
+   */
+  /* .cart-count {
+    position: absolute; */
+    /* top: -5px;
     right: -10px;
     background-color: #ff6347;
     color: #fff;
     border-radius: 50%;
     padding: 2px 5px;
     font-size: 0.8em;
-  }
-  
+  } */
+/*   
   .signup-button {
     padding: 8px 15px;
     background-color: #ff6347;
@@ -99,9 +253,9 @@
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
+  } */
+/*   
   .signup-button:hover {
     background-color: #ff4500;
   }
-  
+    */ 

@@ -1,0 +1,142 @@
+.header {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height calculations */
+  }
+  
+  .slider-container {
+    width: 50%; /* Half the width for the slider */
+    box-sizing: border-box; /* Ensure padding/border is considered */
+  }
+  
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34vw; /* Use vw for proportional height */
+    max-height: 500px; /* Max height for the image */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .header-image {
+    width: 100%; /* Full width within slider */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional rounded corners */
+  }
+  
+  .header-contents {
+    width: 50%; /* Half the width for content */
+    height: 34vw; /* Match height with images */
+    max-height: 500px; /* Max height for content */
+    box-sizing: border-box; /* Include padding/border in size */
+    padding: 20px; /* Space around content */
+    display: flex; /* Flex for vertical alignment */
+    flex-direction: column; /* Vertical stacking of content */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Left-align text */
+    border-radius: 8px; /* Optional rounded corners */
+    margin-left: 20px; /* Space between image and text */
+    overflow: hidden; /* Hide overflow */
+    
+    
+  }
+  
+  .header-contents h2 {
+    margin: 0 0 10px 0; /* Space below heading */
+    font-size: 2.5vw; /* Responsive font size */
+    line-height: 1.2; /* Line height */
+    max-width: 100%; /* Ensure text fits */
+  }
+  
+  .header-contents p {
+    font-size: 1.5vw; /* Responsive font size */
+    margin: 10px 0; /* Space around paragraph */
+    line-height: 1.4; /* Line height */
+    max-width: 100%; /* Ensure text fits */
+  }
+  
+  .header-contents button {
+    background-color: #ff6f61; /* Button background color */
+    border: none; /* Remove border */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Space inside button */
+    text-align: center; /* Center button text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline-block for sizing */
+    font-size: 1.2vw; /* Responsive font size */
+    margin-top: 10px; /* Space above button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded button corners */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .header-contents button:hover {
+    background-color: #e64b3b; /* Hover background color */
+  }
+  
+  /* Slick Carousel custom styling */
+  .slick-prev,
+  .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+  }
+  
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: white;
+    opacity: 0.8;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack content vertically */
+    }
+  
+    .slider-container,
+    .header-contents {
+      width: 100%; /* Full width on small screens */
+      max-height: none; /* Remove max-height */
+      margin: 0; /* Remove margin */
+      height: auto; /* Auto height for flexible layout */
+    }
+  
+    .header-contents {
+      padding: 20px; /* Consistent padding */
+      align-items: center; /* Center text */
+      text-align: center; /* Center text */
+      background: rgba(0, 0, 0, 0.7); /* Adjust background for clarity */
+    }
+  
+    .header-contents h2 {
+      font-size: 4vw; /* Adjust font size for small screens */
+    }
+  
+    .header-contents p {
+      font-size: 3vw; /* Adjust font size for small screens */
+    }
+  
+    .header-contents button {
+      font-size: 3.5vw; /* Adjust button size */
+    }
+  }
+  
