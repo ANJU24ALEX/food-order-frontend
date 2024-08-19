@@ -43,9 +43,9 @@
 
 import React, { useState } from "react";
 import "./Navbar.css"; 
-import eatyummynowIcon from "../assets/eatyummynow-icon.png"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Menu");
@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <img
-        src={eatyummynowIcon}
+        src={assets.logo}
         alt="Eatyummy Icon"
         style={{ width: "100px", height: "auto" }}
       />

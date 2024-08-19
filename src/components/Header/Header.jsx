@@ -1,11 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Header.css';
+import { assets } from '../../assets/assets';
 
 // Correct image imports
-import headerImage1 from '../../assets/header 1.jpg';
- import headerImage2 from '../../assets/header 2.jpg';
-import headerImage3 from '../../assets/header 3.jpg';
+// import headerImage1 from '../../assets/header 1.jpg';
+//  import headerImage2 from '../../assets/header 2.jpg';
+// import headerImage3 from '../../assets/header 3.jpg';
 function Header() {
     const settings = {
       dots: true,
@@ -23,13 +24,13 @@ function Header() {
         <div className="slider-container">
           <Slider {...settings}>
             <div className="slide">
-              <img src={headerImage1} alt="Header 1" className="header-image" />
+              <img src={assets.header_1} alt="Header 1" className="header-image" />
             </div>
             <div className="slide">
-              <img src={headerImage2} alt="Header 2" className="header-image" />
+              <img src={assets.header_2} alt="Header 2" className="header-image" />
             </div>
             <div className="slide">
-              <img src={headerImage3} alt="Header 3" className="header-image" />
+              <img src={assets.header_3}alt="Header 3" className="header-image" />
             </div>
           </Slider>
         </div>

@@ -30,9 +30,11 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 // In your index.js or App.js
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
+    <>
     <div className='app'>
       <Navbar/>
       <Routes>
@@ -41,6 +43,9 @@ const App = () => {
         <Route path='/order' element={<PlaceOrder />} />
       </Routes>
     </div>
+    <Footer/>
+
+    </>
   );
 }
 

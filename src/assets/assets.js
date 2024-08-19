@@ -1,7 +1,11 @@
 import basket_icon from './basket_icon.png'
-// import eatyummynow-icon from './eatyummynow-icon.png'
-// import header_img from './header_img.png'
+import logo from './logo.png'
+import header_1 from './header_1.png'
+import header_2 from './header_2.png'
+import header_3 from './header_3.png'
 import search_icon from './search_icon.png'
+
+
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
 import menu_3 from './menu_3.png'
@@ -43,6 +47,15 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+import food_33 from './food_33.png'
+import food_34 from './food_34.png'
+import food_35 from './food_35.png'
+import food_36 from './food_36.png'
+import food_37 from './food_37.png'
+import food_38 from './food_38.png'
+import food_39 from './food_39.png'
+import food_40 from './food_40.png'
+
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -60,10 +73,13 @@ import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 
+
 export const assets = {
-    // logo,
+     logo,
     basket_icon,
-    // header_img,
+    header_1,
+    header_2,
+    header_3,
     search_icon,
     rating_starts,
     add_icon_green,
@@ -88,7 +104,7 @@ export const menu_list = [
         menu_image: menu_1
     },
     {
-        menu_name: "Wraps",
+        menu_name: "Rolls",
         menu_image: menu_2
     },
     {
@@ -152,28 +168,28 @@ export const food_list = [
         image: food_5,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Wraps"
+        category: "Rolls"
     }, {
         _id: "6",
         name: "Peri Peri Rolls",
         image: food_6,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Wraps"
+        category: "Rolls"
     }, {
         _id: "7",
         name: "Chicken Rolls",
         image: food_7,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Wraps"
+        category: "Rolls"
     }, {
         _id: "8",
         name: "Veg Rolls",
         image: food_8,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Wraps"
+        category: "Rolls"
     }, {
         _id: "9",
         name: "Chicken Kebab",
@@ -344,6 +360,62 @@ export const food_list = [
         name: "Still Water",
         image: food_32,
         price: 1.5,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Drinks"
+    },{
+        _id: "33",
+        name: "Lamb chops",
+        image: food_33,
+        price: 6,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Starters"
+    },{
+        _id: "34",
+        name: "Beef Sausage Roll",
+        image: food_34,
+        price: 14,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Rolls"
+    },{
+        _id: "35",
+        name: "Lamb Tikka Kebab",
+        image: food_35,
+        price: 16,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Kebabs"
+    },{
+        _id: "36",
+        name: "Corned Beef Sandwich",
+        image: food_36,
+        price: 13,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Sandwich"
+    }, {
+        _id: "37",
+        name: "Tango Orange",
+        image: food_37,
+        price: 2,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Drinks"
+    }, {
+        _id: "38",
+        name: "Diet Coke",
+        image: food_38,
+        price: 1.5,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Drinks"
+    }, {
+        _id: "39",
+        name: "7up",
+        image: food_39,
+        price: 1.5,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Drinks"
+    }, {
+        _id: "40",
+        name: "Tango Dark Berry",
+        image: food_40,
+        price: 2,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Drinks"
     }
