@@ -1,88 +1,68 @@
-// import React, { useState } from "react";
-// import "./Navbar.css"; 
-// import eatyummynowIcon from "../assets/eatyummynow-icon.png"; 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
-// const Navbar = () => {
-
-//     const [menu,setMenu] = useState ("Menu");
-//   return (
-//     <div className="navbar">
-//       <img src={eatyummynowIcon} alt="Eatyummy Icon" style={{ width: '150px', height: '150px' }} />
-      
-//       <ul className="navbar-menu">
-//         <li onClick={()=>setMenu("Home")} className={menu==="Home"?"active":""}>Home</li>
-//         <li onClick={()=>setMenu("Menu")} className={menu==="Menu"?"active":""}>Menu</li>
-//         <li onClick={()=>setMenu("Mobile-App")} className={menu==="Mobile-App"?"active":""}>Mobile-App</li>
-//         <li onClick={()=>setMenu("Contact Us")} className={menu==="Contact Us "?"active":""}>Contact Us</li>
-//       </ul>
-
-//       <div className="navbar-right">
-//         {/* Search Input */}
-//         <div className="search-container">
-//           <FontAwesomeIcon icon={faSearch} className="search-icon" />
-//           <input type="text" className="search-input" placeholder="Search..." />
-//         </div>
-
-//         {/* Cart Icon */}
-//         <div className="cart-container">
-//           <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-//           <span className="cart-count"></span> {/* Example count */}
-//         </div>
-
-//         {/* Signup Button */}
-//         <button className="signup-button">Sign Up</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./Navbar.css"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { assets } from "../assets/assets";
+import { Link } from 'react-router-dom';
+import { StoreContext } from './../context/StoreContext';
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Menu");
-  const [cartCount, setCartCount] = useState(3); // Example cart count, can be dynamic
+  const { cartItems } = useContext(StoreContext);
+  const [cartCount, setCartCount] = useState(0); 
+
+  // Calculate cart count
+  useEffect(() => {
+    const count = Object.values(cartItems).reduce((total, itemQuantity) => total + itemQuantity, 0);
+    setCartCount(count);
+  }, [cartItems]);
 
   return (
     <div className="navbar">
-      <img
-        src={assets.logo}
-        alt="Eatyummy Icon"
-        style={{ width: "100px", height: "auto" }}
-      />
+      <Link to='/'>
+        <img
+          src={assets.logo}
+          alt="Eatyummy Icon"
+          className="logo"
+        />
+      </Link>
 
       <ul className="navbar-menu">
-        <li
-          onClick={() => setMenu("Home")}
-          className={menu === "Home" ? "active" : ""}
-        >
-          Home
+        <li>
+          <Link 
+            to='/' 
+            onClick={() => setMenu("Home")}
+            className={menu === "Home" ? "active" : ""}
+          >
+            Home
+          </Link>
         </li>
-        <li
-          onClick={() => setMenu("Menu")}
-          className={menu === "Menu" ? "active" : ""}
-        >
-          Menu
+        <li>
+          <a 
+            href='#explore-menu'
+            onClick={() => setMenu("Menu")}
+            className={menu === "Menu" ? "active" : ""}
+          >
+            Menu
+          </a>
         </li>
-        <li
-          onClick={() => setMenu("Mobile-App")}
-          className={menu === "Mobile-App" ? "active" : ""}
-        >
-          Mobile-App
+        <li>
+          <a 
+            href='#app-download'
+            onClick={() => setMenu("Mobile-App")}
+            className={menu === "Mobile-App" ? "active" : ""}
+          >
+            Mobile-App
+          </a>
         </li>
-        <li
-          onClick={() => setMenu("Contact Us")}
-          className={menu === "Contact Us" ? "active" : ""}
-        >
-          Contact Us
+        <li>
+          <a 
+            href='#footer'
+            onClick={() => setMenu("Contact Us")}
+            className={menu === "Contact Us" ? "active" : ""}
+          >
+            Contact Us
+          </a>
         </li>
       </ul>
 
@@ -97,17 +77,22 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Cart Icon with Dot */}
+        {/* Cart Icon with Count */}
         <div className="cart-container">
-          <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-          {cartCount > 0 && <span className="dot">{cartCount}</span>}
+          <Link to='/cart'>
+            <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
+            {cartCount === 0 
+              ? <span className="dot"></span> // Show dot when cart is empty
+              : <span className="cart-count">{cartCount}</span>}
+          </Link>
         </div>
 
         {/* Signup Button */}
-        <button className="signup-button">Sign Up</button>
+        <button onClick={() => setShowLogin(true)} className="signup-button">Sign Up</button>
       </div>
     </div>
   );
 };
 
 export default Navbar;
+
